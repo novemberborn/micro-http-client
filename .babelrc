@@ -8,11 +8,6 @@
         "env"
       ],
       "sourceMaps": "inline"
-    },
-    "development": {
-      "presets": [
-        "es2015-rollup"
-      ]
     }
   }
 }
