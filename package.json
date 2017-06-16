@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prepublish": "rollup -c",
+    "prepare": "rollup -c",
     "start": "rollup -c --watch",
     "start-test": "jest --watch",
     "test": "eslint . && jest"
