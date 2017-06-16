@@ -12,9 +12,6 @@
     "development": {
       "presets": [
         "es2015-rollup"
-      ],
-      "plugins": [
-        "transform-async-to-generator"
       ]
     }
   }
