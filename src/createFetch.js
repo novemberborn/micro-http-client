@@ -1,3 +1,8 @@
+const globalRef =
+  (typeof window !== 'undefined' && window) || // eslint-disable-line no-undef
+  (typeof global !== 'undefined' && global) ||
+  null;
+
 async function processInterceptor(memo, interceptor) {
   return interceptor(await memo);
 }
@@ -8,6 +13,6 @@ async function localFetch(globalFetch, requestReducers, responseReducers, url, o
   return responseReducers.reduce(processInterceptor, response);
 }
 
-export default function createFetch({ requestReducers = [], responseReducers = [] }) {
+export default function createFetch({ fetch = globalRef.fetch, requestReducers = [], responseReducers = [] }) {
   return localFetch.bind(null, fetch, requestReducers, responseReducers);
 }
